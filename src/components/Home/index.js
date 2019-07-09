@@ -44,7 +44,7 @@ class Home extends Component {
                         </div>
                         <div style={{ textAlign: 'center' }} >
                             Please select agencies to receive their latest tweets
-                            <p>/* IDEAS: */</p>
+                            <p>* IDEAS: *</p>
                             <p>* connect Weather app for best stargazing nights</p>
                             <p>* Add profile functionality - Login, Personal Preferences - Linked to SQL DB</p>
                         </div>

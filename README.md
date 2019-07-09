@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## NASA dashboard
+
+> Allows a user to track various NASA missions, NEOs and image of the day
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -66,4 +70,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
 # dashboard_nasa

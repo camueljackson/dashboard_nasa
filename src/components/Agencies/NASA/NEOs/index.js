@@ -40,7 +40,7 @@ class NEOs extends Component {
                                 return (
                                     <ListGroup.Item key={item.name}>
                                         <p>Name: {item.name}</p>
-                                        <a href={item.nasa_jpl_url} target='_blank'>Visit this NEO's page</a>
+                                        <a href={item.nasa_jpl_url} target='_blank' rel="noopener noreferrer">Visit this NEO's page</a>
                                     </ListGroup.Item>
                                 )
                             })}
