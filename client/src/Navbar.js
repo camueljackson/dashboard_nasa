@@ -23,12 +23,12 @@ class SideNav extends Component {
 						<Nav.Link className="mr-sm-2" href="/nasa">
 							NASA
 						</Nav.Link>
-						<Nav.Link className="mr-sm-2" href="/about">
+						{/* <Nav.Link className="mr-sm-2" href="/about">
 							About
-						</Nav.Link>
-						<Nav.Link className="mr-sm-2" href="/weather">
+						</Nav.Link> */}
+						{/* <Nav.Link className="mr-sm-2" href="/weather">
 							Weather
-						</Nav.Link>
+						</Nav.Link> */}
 					</Nav>
 					<Nav>
 						<Nav.Link href="/profile">
