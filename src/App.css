@@ -1,17 +1,16 @@
-Body {
-    font-family: 'Roboto', 'Open Sans', 'sans-serif';
+body {
+	font-family: 'Roboto', 'Open Sans', 'sans-serif';
 }
 
 .jumbotron {
-    background-color: #ece9ef;
+	background-color: #ece9ef;
 }
 
 .learn-more {
-    background-color: #1d1953;
-    border:#16133f;
+	background-color: #241f64;
+	border: #16133f;
 }
 
-
 .learn-more:hover {
-    background-color: #49449c;
+	background-color: #49449c;
 }
