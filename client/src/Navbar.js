@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar, Card, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { Home, About, Profile, Weather, NASA } from './components';
 import { NEOs, PictureOfTheDay } from './components/NASA';
 
@@ -18,7 +18,7 @@ class SideNav extends Component {
 		return (
 			<Router>
 				<Navbar bg="dark" variant="dark">
-					<Navbar.Brand href="home">Home</Navbar.Brand>
+					<Navbar.Brand href="/">Home</Navbar.Brand>
 					<Nav className="mr-auto">
 						<Nav.Link className="mr-sm-2" href="/nasa">
 							NASA
@@ -48,13 +48,32 @@ class SideNav extends Component {
 						</Nav.Link>
 					</Nav>
 				</Navbar>
-				<Route path="/nasa" component={NASA} />
-				<Route path="/home" component={Home} />
-				<Route path="/about" component={About} />
-				<Route path="/weather" component={Weather} />
-				<Route path="/profile" component={Profile} />
-				<Route path="/near-earth-objects" component={NEOs} />
-				<Route path="/picture-of-the-day" component={PictureOfTheDay} />
+				<Switch>
+					<Route path="/" component={Home} exact />
+					<Route path="/nasa" component={NASA} />
+					<Route path="/about" component={About} />
+					<Route path="/weather" component={Weather} />
+					<Route path="/profile" component={Profile} />
+					<Route path="/near-earth-objects" component={NEOs} />
+					<Route path="/picture-of-the-day" component={PictureOfTheDay} />
+					<Route
+						render={() => (
+							<Card style={{ margin: 50 }}>
+								<Card.Header as="h2"> 404: Not Found</Card.Header>
+								<Card.Body>
+									<Button variant="primary" href="/">
+										Go Back Home
+									</Button>
+								</Card.Body>
+							</Card>
+						)}
+					/>
+					<Redirect
+						to={{
+							pathname: '/',
+						}}
+					/>
+				</Switch>
 			</Router>
 		);
 	}
