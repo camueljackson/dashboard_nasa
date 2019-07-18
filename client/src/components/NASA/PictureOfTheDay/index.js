@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Image, Jumbotron, Spinner } from 'react-bootstrap';
-import axios from 'axios';
+import { Image, Jumbotron, Spinner } from 'react-bootstrap';
 import '../../../App.css';
 
 class PictureOfTheDay extends Component {
@@ -15,21 +14,18 @@ class PictureOfTheDay extends Component {
 		this.getAPOD();
 	}
 
-	getAPOD() {
+	getAPOD = async () => {
 		try {
-			axios
-				.get(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_API_KEY}`)
-				.then(response => {
-					this.setState({
-						data: response.data,
-					});
-					console.log(response);
-				});
+			const response = await fetch(
+				`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_API_KEY}`,
+				{ method: 'GET' }
+			);
+			this.setState({ data: await response.json() });
 		} catch (error) {
 			// TODO: handle erros
 			throw error;
 		}
-	}
+	};
 
 	render() {
 		const { data } = this.state;

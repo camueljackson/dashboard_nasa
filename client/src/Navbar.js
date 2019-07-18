@@ -50,12 +50,12 @@ class SideNav extends Component {
 				</Navbar>
 				<Switch>
 					<Route path="/" component={Home} exact />
-					<Route path="/nasa" component={NASA} />
-					<Route path="/about" component={About} />
-					<Route path="/weather" component={Weather} />
-					<Route path="/profile" component={Profile} />
-					<Route path="/near-earth-objects" component={NEOs} />
-					<Route path="/picture-of-the-day" component={PictureOfTheDay} />
+					<Route path="/nasa" component={NASA} exact />
+					<Route path="/about" component={About} exact />
+					<Route path="/weather" component={Weather} exact />
+					<Route path="/profile" component={Profile} exact />
+					<Route path="/near-earth-objects" component={NEOs} exact />
+					<Route path="/picture-of-the-day" component={PictureOfTheDay} exact />
 					<Route
 						render={() => (
 							<Card style={{ margin: 50 }}>

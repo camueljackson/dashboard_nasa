@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Jumbotron, Button, Row, Col, Card } from 'react-bootstrap';
-import axios from 'axios';
 import '../../../App.css';
 
 class NEOs extends Component {
@@ -15,15 +14,16 @@ class NEOs extends Component {
 		this.getNEO();
 	}
 
-	getNEO = () => {
+	getNEO = async () => {
 		try {
-			axios
-				.get(`https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=${process.env.REACT_APP_NASA_API_KEY}`)
-				.then(response => {
-					this.setState({
-						NEOs: response.data.near_earth_objects,
-					});
-				});
+			const response = await fetch(
+				`https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=${process.env.REACT_APP_NASA_API_KEY}`,
+				{ method: 'GET' }
+			);
+
+			let result = await response.json();
+
+			this.setState({ NEOs: result.near_earth_objects });
 		} catch (error) {
 			// TODO: handle erros
 			throw error;
